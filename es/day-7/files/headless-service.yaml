@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None # Como estamos creando un Servicio Headless, no queremos que tenga una dirección IP, por lo que definimos el clusterIP como None.
+  selector:
+    app: nginx
